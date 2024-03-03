@@ -65,10 +65,7 @@ class AddressBook(UserDict,Phone):
        
     def find(self,name):
         
-        for nick, other in self.data.items():
-            
-            if nick==name:
-                return other
+       return self.get(name)
     
     def delete(self,name):
         for nick, other in self.data.items():
@@ -110,8 +107,7 @@ for name, record in book.data.items():
 
 # Знаходження та редагування телефону для John
 john = book.find("John")                        # Отримуємо класс John( в теоріі але не працює)
-
-john=john_record                                # грубо кажучі ось так воно повинно бути 
+                             # грубо кажучі ось так воно повинно бути 
 john.edit_phone("1234567890", "1112223333")     #john->book.find()->AdressBook->Recod->Name,[Phone]
 
 
